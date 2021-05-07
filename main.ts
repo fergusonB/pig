@@ -85,8 +85,8 @@ function roll(): number {
 
 function createPlayers(): string[] {
     const players = prompt(`How many players would you like?: `);
-    if (players === null){
-        console.log('You must enter a number.')
+    if (players === null || Number(players) < 1 ){
+        console.log('You must enter a valid number.')
         return createPlayers()
     }
     const numberPlayers = Number(players);
@@ -117,7 +117,7 @@ function assignScoresTo(players: string[]): LooseObject {
 function getWinningScore(): number {
     const desiredScore = prompt("What should the winning score be?: ");
     const numberDesiredScore = Number(desiredScore);
-    if (isNaN(numberDesiredScore) && numberDesiredScore < 1) return getWinningScore();
+    if (isNaN(numberDesiredScore) || numberDesiredScore < 1) return getWinningScore();
     return numberDesiredScore;
 }
 
