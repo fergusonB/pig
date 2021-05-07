@@ -3,3 +3,4 @@ targets.txt
 pig_m1_mac
 pig_mac
 pig_windows.exe
+build/*
