@@ -117,7 +117,7 @@ function assignScoresTo(players: string[]): LooseObject {
 function getWinningScore(): number {
     const desiredScore = prompt("What should the winning score be?: ");
     const numberDesiredScore = Number(desiredScore);
-    if (isNaN(numberDesiredScore)) return getWinningScore();
+    if (isNaN(numberDesiredScore) && numberDesiredScore < 1) return getWinningScore();
     return numberDesiredScore;
 }
 
